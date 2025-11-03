@@ -1,0 +1,271 @@
+:root {
+  --bg-color: #0b1d2d;
+  --accent: #f39c12;
+  --card-bg: #ffffff;
+  --card-border: #dcdcdc;
+  --text-light: #fefefe;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #14324a, #06101a);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  width: min(1100px, 95vw);
+  padding: 2rem;
+}
+
+.screen {
+  background: rgba(6, 16, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.mode-buttons {
+  display: grid;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mode-button,
+.back-button,
+.action-button {
+  background: linear-gradient(135deg, #f39c12, #f1c40f);
+  color: #1a1a1a;
+  font-size: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(243, 156, 18, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mode-button:hover,
+.back-button:hover,
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(243, 156, 18, 0.45);
+}
+
+.action-button:disabled {
+  opacity: 0.55;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.action-button:disabled:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.back-button {
+  font-size: 1rem;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.score {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 12px;
+  min-height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.round-indicator {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.table {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.player-area {
+  display: grid;
+  justify-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.player-area.top.rotated {
+  transform: rotate(180deg);
+}
+
+.player-area.top.rotated .card-slot,
+.player-area.top.rotated .player-name,
+.player-area.top.rotated .action-button {
+  transform: rotate(180deg);
+}
+
+.player-name {
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-slot {
+  width: 140px;
+  height: 196px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text-light);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.card {
+  width: 120px;
+  height: 170px;
+  background: var(--card-bg);
+  color: #222;
+  border-radius: 12px;
+  border: 2px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card .value {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.card .suit {
+  font-size: 1.4rem;
+  color: #c0392b;
+}
+
+.center-area {
+  display: grid;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.pile {
+  width: 160px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.pile-label {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.log {
+  margin-top: 2rem;
+  max-height: 250px;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.log-entry {
+  margin-bottom: 0.5rem;
+}
+
+.log-entry:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .mode-button,
+  .action-button {
+    font-size: 1rem;
+  }
+
+  .card-slot {
+    width: 110px;
+    height: 150px;
+  }
+
+  .card {
+    width: 100px;
+    height: 140px;
+  }
+}
